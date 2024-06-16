@@ -49,7 +49,8 @@
 			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
     			@csrf
 			</form>
-			</section>
+			</ul>
+	</section>
 	<!-- SIDEBAR -->
 
 	<!-- CONTENT -->
@@ -74,50 +75,16 @@
 						</li>
 						<li><i class='bx bx-chevron-right' ></i></li>
 						<li>
-							<a class="active" href="{{ route('dashboard') }}">Home</a>
+							<a class="active" href="{{ route('events') }}">Events</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</main>
-	<!--workspace container-->
 	</section>
-	<div class="main-content">
-        <div class="container mt-5">
-            <h2>Let's build a Workspace</h2>
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-            <form action="{{ route('workspaces.store') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-		<div id="workspaceList">
-            @foreach($workspaces as $workspace)
-                <div class="workspace-item mb-3">
-                    <h3>{{ $workspace->name }}</h3>
-                    <p>{{ $workspace->description }}</p>
-                    <form action="{{ route('workspaces.destroy', $workspace->id) }}" method="POST">
-                        @csrf
-					    @method('DELETE')
-                	    <button type="submit" class="btn-delete">Delete</button>
-				    </form>
-                </div>
-            @endforeach
-        </div>
-    </div>	
-	<script src="{{ asset('js/UserDashboard.js') }}"></script>
+	<!-- CONTENT -->
+	
+
 	<script src="js/UserDashboard.js"></script>
 </body>
 </html>
