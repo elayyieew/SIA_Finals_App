@@ -183,6 +183,9 @@ body {
 #sidebar.hide ~ .main-content .container {
     margin-left: 80px; 
 }
+#sidebar.hide ~ .calendar-container .event-section {
+    margin-left: 80px; 
+}
 
 #sidebar.hide ~ #workspaceList {
     margin-left: 80px; 	
@@ -190,6 +193,7 @@ body {
 #sidebar.hide ~ #workspaceList {
     flex: 1 1 calc(100% - 20px);
 }
+
 /* SIDEBAR */
 
 
@@ -376,7 +380,7 @@ h2 {
 
 .btn-primary,
 .btn-delete {
-    background-color: var(--light-blue);
+    background-color: var(--light-blue); 
     color: var(--dark);
     border: none;
     padding: 10px 20px;
@@ -473,4 +477,133 @@ input.form-control {
     color: #155724;
     background-color: #d4edda;
     border-color: #c3e6cb;
+}
+
+/*calendar*/
+
+.calendar-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    transition: margin-left 0.3s ease; 
+}
+.calendar {
+    width: 400px; 
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(218, 61, 61, 0.5);
+    padding: 10px; 
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; 
+    background: rgba(218, 61, 61, 0.5);
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.calendar-days, .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-bottom: 1px solid #ddd;
+}
+.calendar-container, .event-section {
+    transition: margin-left 0.3s ease;
+}
+.day-header, .calendar-grid div {
+    padding: 10px; 
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+@media (max-width: 768px) {
+    .calendar-container {
+        flex-direction: column;
+    }
+    
+    .calendar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .upcoming-events {
+        flex: none;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+}
+.event-section {
+    flex: 1;
+    margin: 20px;
+	margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: margin-left 0.3s ease; 
+}
+
+
+.event-form h3 {
+    margin-top: 0;
+}
+
+.event-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.event-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #555;
+}
+
+.upcoming-events {
+	margin-right: 20px;
+	margin-left: 20px;
+    flex: 1; 
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px; 
+}
+
+.upcoming-events h3 {
+    margin-top: 0;
+}
+
+.upcoming-events ul {
+    list-style: none;
+    padding: 0;
+}
+
+.upcoming-events li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }

@@ -12,4 +12,4 @@ class EventController extends Controller
         $events = Event::all();
         return view('user.events', compact('events'));
     }
-}
+} 

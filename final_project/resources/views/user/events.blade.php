@@ -80,11 +80,46 @@
 					</ul>
 				</div>
 			</div>
+			<div class="events-organizer">
+		<div class="calendar-container">
+			<div class="calendar">
+				<div class="calendar-header">
+					<button id="prevMonthBtn">&lt;</button>
+					<h2 id="monthYearDisplay"></h2>
+					<button id="nextMonthBtn">&gt;</button>
+				</div>
+				<div class="calendar-days">
+					<div class="day-header">Sun</div>
+					<div class="day-header">Mon</div>
+					<div class="day-header">Tue</div>
+					<div class="day-header">Wed</div>
+					<div class="day-header">Thu</div>
+					<div class="day-header">Fri</div>
+					<div class="day-header">Sat</div>
+				</div>
+				<div class="calendar-grid" id="calendarGrid"></div>
+			</div>
+			<div class="upcoming-events">
+				<h3>Upcoming Events</h3>
+				<ul id="eventList"></ul>
+			</div>
+		</div>
+
+		<div class="event-section">
+			<div class="event-form">
+				<h3>Create Event</h3>
+				<form id="eventForm">
+					<label for="eventDate">Date:</label>
+					<input type="date" id="eventDate" required>
+					<label for="eventTitle">Title:</label>
+					<input type="text" id="eventTitle" required>
+					<button type="submit" class="btn-submit">Add Event</button>
+				</form>
+			</div>
+		</div>
+	</div>
 		</main>
 	</section>
-	<!-- CONTENT -->
-	
-
-	<script src="js/UserDashboard.js"></script>
+	<script src="js/UserDashboard.js"></script> 
 </body>
 </html>
